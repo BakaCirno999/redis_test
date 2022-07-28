@@ -1,0 +1,32 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 9090
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 60000
+      max-lifetime: 600000
+      maximum-pool-size: 15
+      minimum-idle: 5
+      pool-name: hikariCP
+    name: mall
+    password: 1234
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true
+    username: root
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:static
+  thymeleaf:
+    cache: false
+  redis:
+    host: 127.0.0.1 # Redis服务器地址
+    database: 0 # Redis数据库索引（默认为0）
+    port: 6379 # Redis服务器连接端口
+    password: # Redis服务器连接密码（默认为空）
+    timeout: 1000ms # 连接超时时间
